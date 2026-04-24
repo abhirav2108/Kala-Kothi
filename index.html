@@ -424,3 +424,45 @@
         </div>
     </div>
 </footer>
+    <script>
+    // Carousel logic updated to scroll exactly 100% width for single views
+    function scrollCarousel(direction) {
+        const carousel = document.getElementById('review-carousel');
+        const scrollAmount = carousel.offsetWidth; 
+        carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+    }
+
+    // Modal & Calendar Logic
+    function openCalendarModal() {
+        document.getElementById('calendarModal').classList.remove('hidden');
+    }
+
+    function closeCalendarModal() {
+        document.getElementById('calendarModal').classList.add('hidden');
+    }
+
+    function checkDateAvailability() {
+        const dateInput = document.getElementById('selectedDate').value;
+        
+        if (!dateInput) {
+            alert('Please select an event date from the calendar first.');
+            return;
+        }
+
+        // Convert the date to a nice readable format (e.g., "15 November 2026")
+        const dateObj = new Date(dateInput);
+        const formattedDate = dateObj.toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' });
+        
+        // Generate the WhatsApp link
+        const whatsappNumber = "919044844950";
+        const message = `Hello Kala Kothi! I would like to check if your venue is available to book on ${formattedDate}.`;
+        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+        
+        // Open WhatsApp and close the modal
+        window.open(whatsappUrl, '_blank');
+        closeCalendarModal();
+    }
+</script>
+
+</body>
+</html>
