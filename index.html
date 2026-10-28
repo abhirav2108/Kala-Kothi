@@ -439,6 +439,31 @@
         </div>
     </div>
 </footer>
+    <!-- CALENDAR MODAL (Paste this right above your <script> tag) -->
+<div id="calendarModal" class="hidden fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-surface-container-lowest rounded-2xl p-8 max-w-md w-full relative editorial-shadow border border-outline-variant/20">
+        <!-- Close Button -->
+        <button onclick="closeCalendarModal()" class="absolute top-4 right-4 text-on-surface-variant hover:text-primary transition-colors">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+
+        <h3 class="font-headline text-2xl text-primary mb-2">Check Availability</h3>
+        <p class="font-body text-sm text-on-surface-variant mb-6">Select your preferred event date, and we'll instantly check our booking calendar via WhatsApp.</p>
+
+        <!-- Date Input Container -->
+        <div class="mb-8">
+            <label for="selectedDate" class="block font-label text-xs uppercase tracking-widest text-on-surface-variant mb-2">Event Date</label>
+            <input type="date" id="selectedDate" class="w-full bg-surface-container border border-outline-variant/30 rounded-lg px-4 py-3 font-body text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" min="2026-01-01">
+        </div>
+
+        <!-- Action Button -->
+        <button onclick="checkDateAvailability()" class="w-full bg-primary text-on-primary py-3 rounded-lg font-label uppercase tracking-widest text-sm hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+            <span>Check via WhatsApp</span>
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </button>
+    </div>
+</div>
+<!-- END CALENDAR MODAL -->
     <script>
     // Carousel logic updated to scroll exactly 100% width for single views
     function scrollCarousel(direction) {
