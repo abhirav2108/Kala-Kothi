@@ -14,5 +14,5 @@ This project involved the end-to-end development of a modern landing page design
 
 ## Tech Stack
 * **Frontend:** HTML5, CSS3, JavaScript
-* **Hosting & Deployment:** Netlify
+* **Hosting & Deployment:** Vercel
 * **DNS Management:** GoDaddy
